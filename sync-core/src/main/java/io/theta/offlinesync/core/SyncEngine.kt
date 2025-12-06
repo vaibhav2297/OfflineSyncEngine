@@ -11,7 +11,7 @@ interface SyncEngine {
 
     suspend fun forceRetry(operationId: String)
 
-    fun state(): Flow<List<SyncState>>
+    fun state(): Flow<SyncState>
 
     fun observeQueue(): Flow<List<Operation>>
 

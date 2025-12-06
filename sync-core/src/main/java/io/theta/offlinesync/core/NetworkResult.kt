@@ -9,7 +9,7 @@ sealed class NetworkResult {
 
     data class Failure(
         val httpCode: Int?,
-        val errorMessage: String?,
+        val errorMessage: String,
         val retryable: Boolean
     ) : NetworkResult()
 }
