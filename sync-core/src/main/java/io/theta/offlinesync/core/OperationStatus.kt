@@ -5,7 +5,7 @@ enum class OperationStatus {
     IN_PROGRESS,
     FAILED,
     SUCCESS,
-    CANCELED
+    CANCELLED
 }
 
 enum class OperationType {
