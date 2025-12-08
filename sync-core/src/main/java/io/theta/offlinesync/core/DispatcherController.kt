@@ -12,6 +12,18 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 
+/**
+ * The default implementation of the [SyncEngine] interface.
+ *
+ * This class orchestrates the synchronization process by managing a queue of operations,
+ * interacting with the network, and handling conflicts and retries.
+ *
+ * @param queueStore The durable store for pending operations.
+ * @param networkAdapter The adapter for making network requests.
+ * @param scheduler The optional scheduler for periodic syncs.
+ * @param conflictStrategy The optional strategy for resolving data conflicts.
+ * @param backoffPolicy The policy for retrying failed operations.
+ */
 internal class SyncEngineImpl(
     private val queueStore: QueueStore,
     private val networkAdapter: NetworkAdapter,
