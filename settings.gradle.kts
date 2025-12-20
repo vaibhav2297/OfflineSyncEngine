@@ -23,3 +23,4 @@ rootProject.name = "Offline Sync Engine"
 include(":app")
 include(":sync-core")
 include(":adapter:room")
+include(":adapter:ktor")
