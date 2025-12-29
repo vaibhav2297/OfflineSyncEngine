@@ -4,6 +4,15 @@ import io.theta.offlinesync.core.ConflictStrategy
 import io.theta.offlinesync.core.NetworkAdapter
 import io.theta.offlinesync.core.QueueStore
 
+/**
+ * Manages the delta sync process.
+ *
+ * @property networkAdapter The [NetworkAdapter] to use for fetching changes.
+ * @property queueStore The [QueueStore] to use for accessing pending operations.
+ * @property tokenStore The [ChangeTokenStore] to use for storing and retrieving the sync token.
+ * @property changeApplier The [ChangeApplier] to use for applying changes.
+ * @property conflictStrategy The [ConflictStrategy] to use for resolving conflicts.
+ */
 class DeltaSyncManager(
     private val networkAdapter: NetworkAdapter,
     private val queueStore: QueueStore,
@@ -12,6 +21,9 @@ class DeltaSyncManager(
     private val conflictStrategy: ConflictStrategy?
 ) {
 
+    /**
+     * Performs a delta sync.
+     */
     suspend fun sync() {
 
         // Retrieving token
